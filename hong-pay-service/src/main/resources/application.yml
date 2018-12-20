@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: hong-pay
+  profiles:
+    active: test
+
+  http:
+    encoding:
+      charset: UTF-8
+
+server:
+  port: 9219
+  servlet:
+    context-path: /
+
+debug: false

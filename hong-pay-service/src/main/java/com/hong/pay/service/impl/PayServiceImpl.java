@@ -27,7 +27,7 @@ import static com.hong.pay.common.Constants.*;
  * 自动路由到对应的支付方,发起支付请求
  */
 @Service
-public class PayServiceImpl implements IPayService{
+public class PayServiceImpl implements IPayService {
 
     private static final Logger logger = LoggerFactory.getLogger(PayServiceImpl.class);
 
@@ -51,22 +51,23 @@ public class PayServiceImpl implements IPayService{
      *    userId=1
      *  }
      * </pre>
+     *
      * @param params Map<String, String>
      * @return
      */
     @Override
     public GenericResult<PayApplyResult> pay(@RequestParam Map<String, String> params) {
         GenericResult<PayApplyResult> payResult;
-        String url = routePayReturnAndNotifyUrl(params);
+        routePayReturnAndNotifyUrl(params);
         String orderNo = params.get(PARAM_ORDER_NO);
 
         return null;
     }
 
-    private String routePayReturnAndNotifyUrl(Map<String, String> params) {
+    private void routePayReturnAndNotifyUrl(Map<String, String> params) {
         ChannelType channelType = ChannelType.from(params.get(PARAM_CHANNEL_TYPE));
         switch (channelType) {
-            case ALIPAY_WAP:
+            /*case ALIPAY_WAP:
             case ALIPAY_APP:
             case ALIPAY_SCAN:
             case ALIPAY_WEB:
@@ -93,7 +94,7 @@ public class PayServiceImpl implements IPayService{
             default:
                 params.put(PARAM_PAYMENT_NOTIFY_URL, NOTIFY_URL);
                 params.put(PARAM_PAYMENT_RETURN_URL, PAYMENT_RETURN);
-                break;
+                break;*/
         }
     }
 

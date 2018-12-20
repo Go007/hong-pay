@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  *
  */
 @Component
-@PropertySource(value = {"classpath:${spring.profiles.active}/config.yml"},encoding="UTF-8")
+@PropertySource(value = {"classpath:${spring.profiles.active}/config.properties"},encoding="UTF-8")
 @ConfigurationProperties(prefix = "alipay")
 public class AliPayConfig {
 
@@ -17,8 +17,7 @@ public class AliPayConfig {
     public static String payAppId;
     public static String appPrivateKey;
     public static String appPublicKey;
-    public static String alipayPubKey;
-
+    public static String pubKey;
     public static String notifyUrl;
 
     public static void setGateWay(String gateWay) {
@@ -37,11 +36,11 @@ public class AliPayConfig {
         AliPayConfig.appPublicKey = appPublicKey;
     }
 
-    public static void setAlipayPubKey(String alipayPubKey) {
-        AliPayConfig.alipayPubKey = alipayPubKey;
-    }
-
     public static void setNotifyUrl(String notifyUrl) {
         AliPayConfig.notifyUrl = notifyUrl;
+    }
+
+    public static void setPubKey(String pubKey) {
+        AliPayConfig.pubKey = pubKey;
     }
 }

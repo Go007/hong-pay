@@ -15,7 +15,7 @@ public class StartUpRunner implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        logger.info("ID服务启动,预加载数据start...");
+        logger.info("Pay服务启动,预加载数据start...");
 
     }
 }

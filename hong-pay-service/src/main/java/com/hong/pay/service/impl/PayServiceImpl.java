@@ -7,6 +7,7 @@ import com.hong.pay.bean.PayChannel;
 import com.hong.pay.bean.Payment;
 import com.hong.pay.bean.Refund;
 import com.hong.pay.common.Constants;
+import com.hong.pay.config.AliPayConfig;
 import com.hong.pay.dto.*;
 import com.hong.pay.enums.ChannelType;
 import com.hong.pay.service.IPayService;
@@ -71,8 +72,8 @@ public class PayServiceImpl implements IPayService {
             case ALIPAY_APP:
             case ALIPAY_SCAN:
             case ALIPAY_WEB:
-                params.put(PARAM_PAYMENT_NOTIFY_URL, ALI_NOTIFY_URL);
-                params.put(PARAM_PAYMENT_RETURN_URL, ALI_RETURN_URL);
+                params.put(PARAM_PAYMENT_NOTIFY_URL, AliPayConfig.notifyUrl);
+                params.put(PARAM_PAYMENT_RETURN_URL, AliPayConfig.returnUrl);
                 break;
             case WECHAT_APP:
             case WECHAT_JSAPI:

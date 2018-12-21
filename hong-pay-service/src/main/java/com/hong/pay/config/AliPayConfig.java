@@ -19,6 +19,7 @@ public class AliPayConfig {
     public static String appPublicKey;
     public static String pubKey;
     public static String notifyUrl;
+    public static String returnUrl;
 
     public static void setGateWay(String gateWay) {
         AliPayConfig.gateWay = gateWay;
@@ -42,5 +43,9 @@ public class AliPayConfig {
 
     public static void setPubKey(String pubKey) {
         AliPayConfig.pubKey = pubKey;
+    }
+
+    public static void setReturnUrl(String returnUrl) {
+        AliPayConfig.returnUrl = returnUrl;
     }
 }

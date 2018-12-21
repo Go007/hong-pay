@@ -3,6 +3,8 @@ package com.hong.pay.controller;
 import com.hong.common.bean.Result;
 import com.hong.common.utils.GetPropertyUtils;
 import com.hong.pay.config.AliPayConfig;
+import com.hong.pay.config.WechatPayConfig;
+import com.hong.pay.config.WechatScanPayConfig;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,6 +26,8 @@ public class PayController {
         data.put("payAppId",AliPayConfig.payAppId);
         data.put("notifyUrl",AliPayConfig.notifyUrl);
         data.put("gateWay2", propertyUtils.getLabel("alipay.gateWay"));
+        data.put("wxnotifyurl", WechatPayConfig.notifyUrl);
+        data.put("wxscanappid", WechatScanPayConfig.appId);
         result.setData(data);
         return result;
     }

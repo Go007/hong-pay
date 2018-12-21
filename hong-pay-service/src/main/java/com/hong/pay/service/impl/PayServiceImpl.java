@@ -8,6 +8,7 @@ import com.hong.pay.bean.Payment;
 import com.hong.pay.bean.Refund;
 import com.hong.pay.common.Constants;
 import com.hong.pay.config.AliPayConfig;
+import com.hong.pay.config.WechatPayConfig;
 import com.hong.pay.dto.*;
 import com.hong.pay.enums.ChannelType;
 import com.hong.pay.service.IPayService;
@@ -68,7 +69,7 @@ public class PayServiceImpl implements IPayService {
     private void routePayReturnAndNotifyUrl(Map<String, String> params) {
         ChannelType channelType = ChannelType.from(params.get(PARAM_CHANNEL_TYPE));
         switch (channelType) {
-            /*case ALIPAY_WAP:
+            case ALIPAY_WAP:
             case ALIPAY_APP:
             case ALIPAY_SCAN:
             case ALIPAY_WEB:
@@ -77,14 +78,14 @@ public class PayServiceImpl implements IPayService {
                 break;
             case WECHAT_APP:
             case WECHAT_JSAPI:
-                params.put(PARAM_PAYMENT_NOTIFY_URL, WECHAT_NOTIFY_URL);
-                params.put(PARAM_PAYMENT_RETURN_URL, WECHAT_RETURN_URL);
+                params.put(PARAM_PAYMENT_NOTIFY_URL, WechatPayConfig.notifyUrl);
+                params.put(PARAM_PAYMENT_RETURN_URL, WechatPayConfig.returnUrl);
                 break;
             case WECHAT_SCAN:
-                params.put(PARAM_PAYMENT_NOTIFY_URL, WECHAT_NOTIFY_URL);
-                params.put(PARAM_PAYMENT_RETURN_URL, WECHAT_RETURN_URL);
+                params.put(PARAM_PAYMENT_NOTIFY_URL, WechatPayConfig.notifyUrl);
+                params.put(PARAM_PAYMENT_RETURN_URL, WechatPayConfig.returnUrl);
                 break;
-            case JDPAY_WAP:
+           /* case JDPAY_WAP:
                 params.put(PARAM_PAYMENT_NOTIFY_URL, JD_NOTIFY_URL);
                 params.put(PARAM_PAYMENT_RETURN_URL, JD_RETURN_URL);
                 break;

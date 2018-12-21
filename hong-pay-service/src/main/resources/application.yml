@@ -2,7 +2,7 @@ spring:
   application:
     name: hong-pay
   profiles:
-    active: dev
+    active: test
 
   http:
     encoding:

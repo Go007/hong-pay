@@ -8,3 +8,6 @@ https://www.liangzl.com/get-article-detail-705.html
 https://www.imooc.com/article/47296
 
 SpringBoot配置文件YML注意事项 https://blog.csdn.net/qq_31001665/article/details/70197543
+
+Spring Boot默认的组件扫描规则:从启动类所在包开始，扫描当前包及其子包下的所有文件
+
